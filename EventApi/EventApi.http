@@ -1,6 +1,15 @@
 @EventApi_HostAddress = http://localhost:5119
+@ApiKey = dev-test-key
 
-GET {{EventApi_HostAddress}}/weatherforecast/
-Accept: application/json
+POST {{EventApi_HostAddress}}/events
+Content-Type: application/json
+X-API-Key: {{ApiKey}}
 
-###
+{
+  "event_id": "123",
+  "source": "manual-test",
+  "timestamp": "2026-05-16T18:00:00Z",
+  "payload": {
+    "message": "Hello world"
+  }
+}

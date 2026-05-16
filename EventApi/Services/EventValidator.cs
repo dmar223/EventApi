@@ -16,7 +16,7 @@ namespace EventApi.Services
             {
                 if (!IsValidTimestamp(eventEnvelope.Timestamp))
                 {
-                    validationResult.AddError($"timestamp not valid");
+                    validationResult.AddError($"timestamp not an ISO-8601 string");
                 }
             }
 

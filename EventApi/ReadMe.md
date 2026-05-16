@@ -19,7 +19,7 @@ The service accepts JSON events via HTTP, validates requests, and asynchronously
 
 # Architecture Overview
 
-The service is intentionally designed with clear separation between ingestion and processing.
+The service is designed with separation between ingestion and processing.
 
 ```text
 Client
@@ -36,6 +36,8 @@ In-Memory Channel Queue
   ↓
 Event Processor Job
 ```
+
+Separating the Message Queue from the Publisher will allow the queue implementation to be swapped out for an alternative provider.
 
 # Running the Service
 
@@ -197,3 +199,4 @@ Potential future enhancements include:
 - Persistent event storage
 - Improved validation contracts
 - Integration testing
+- Move dependency injection to somewhere more maintainable

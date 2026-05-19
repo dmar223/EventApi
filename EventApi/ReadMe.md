@@ -19,25 +19,7 @@ The service accepts JSON events via HTTP, validates requests, and asynchronously
 
 # Architecture Overview
 
-The service is designed with separation between ingestion and processing.
-
-```text
-Client
-  ↓
-EventsController
-  ↓
-Validation
-  ↓
-EventPublisher
-  ↓
-Message Queue Abstraction
-  ↓
-In-Memory Channel Queue
-  ↓
-Event Processor Job
-```
-
-Separating the Message Queue from the Publisher will allow the queue implementation to be swapped out for an alternative provider.
+![Architecture Diagram](ArchitectureDiagram.png)
 
 # Running the Service
 
